@@ -1,0 +1,24 @@
+git clone https://github.com/salesforce/ai-economist.git
+conda create --name policy python=3.7 --yes
+conda activate policy
+export PYTHONPATH=<local path to ai-economist>:$PYTHONPATH
+cd ai-economist
+pip install -e .
+pip install "ray[all]" torch
+pip install pandas 
+pip install matplotlib
+pip install GPUtil
+
+
+
+
+#add the below function in Maps class this function will be used in curriculum learning
+#Maps class will be in this path /ai-economist/foundation/base/world.py
+
+def get_agent_location(self, agent_idx):
+        return self._agent_locs[agent_idx]
+
+
+
+
+
